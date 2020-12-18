@@ -14,7 +14,7 @@ private:
 public:
 	~Clock()
 	{
-		cout << "Объект удален!!!" << endl;
+		cout << "РћР±СЉРµРєС‚ СѓРґР°Р»РµРЅ!!!" << endl;
 	}
 	Clock()
 	{
@@ -68,10 +68,10 @@ template <class T>
 void Clock<T>::zadanie()
 {
 	if (hour < 12)
-		cout << "Данное время до полудня" << endl << endl;
+		cout << "Р”Р°РЅРЅРѕРµ РІСЂРµРјСЏ РґРѕ РїРѕР»СѓРґРЅСЏ" << endl << endl;
 	else if (hour == 12 && minute == 0 && second == 0)
-		cout << "Полдень" << endl << endl;
-	else cout << "Данное время после полудня" << endl << endl;
+		cout << "РџРѕР»РґРµРЅСЊ" << endl << endl;
+	else cout << "Р”Р°РЅРЅРѕРµ РІСЂРµРјСЏ РїРѕСЃР»Рµ РїРѕР»СѓРґРЅСЏ" << endl << endl;
 }
 
 template <class T>
@@ -117,7 +117,7 @@ void Clock<T>::operator+=(int second1)
 	}
 	while (hour >= 24)
 		hour = hour - 24;
-	cout << "Получившееся время: ";
+	cout << "РџРѕР»СѓС‡РёРІС€РµРµСЃСЏ РІСЂРµРјСЏ: ";
 	show();
 	system("pause");
 }
@@ -155,7 +155,7 @@ public:
 				delete StatPtr;
 			}
 		}
-		cout << "Указатель удален" << endl;
+		cout << "РЈРєР°Р·Р°С‚РµР»СЊ СѓРґР°Р»РµРЅ" << endl;
 	}
 	SmartClock<T1>& operator=(const SmartClock<T1>& p) {
 		if (StatPtr) {
@@ -192,7 +192,7 @@ int main()
 				int chooseMenu2 = menuChange(pt1);
 				if (chooseMenu2 == 0)
 				{
-					cout << "Введите часы: ";
+					cout << "Р’РІРµРґРёС‚Рµ С‡Р°СЃС‹: ";
 					int ptr = getTime(24);
 					pt1->changeHour(ptr);
 					system("cls");
@@ -200,7 +200,7 @@ int main()
 				else
 					if (chooseMenu2 == 1)
 					{
-						cout << "Введите минуты: ";
+						cout << "Р’РІРµРґРёС‚Рµ РјРёРЅСѓС‚С‹: ";
 						int ptr = getTime(60);
 						pt1->changeMinute(ptr);
 						system("cls");
@@ -208,7 +208,7 @@ int main()
 					else
 						if (chooseMenu2 == 2)
 						{
-							cout << "Введите секунды: ";
+							cout << "Р’РІРµРґРёС‚Рµ СЃРµРєСѓРЅРґС‹: ";
 							int ptr = getTime(60);
 							pt1->changeSecond(ptr);
 							system("cls");
@@ -233,7 +233,7 @@ int main()
 				else
 					if (chooseMenu1 == 3)
 					{
-						cout << "Введите, сколько секунд добавить к данному времени: ";
+						cout << "Р’РІРµРґРёС‚Рµ, СЃРєРѕР»СЊРєРѕ СЃРµРєСѓРЅРґ РґРѕР±Р°РІРёС‚СЊ Рє РґР°РЅРЅРѕРјСѓ РІСЂРµРјРµРЅРё: ";
 						int second1 = getInt();
 						pt2->operator+=(second1);
 					}
@@ -251,20 +251,20 @@ int menuMain()
 	{
 		choiceButton = (choiceButton + 5) % 5;
 
-		if (choiceButton == 0) cout << " -> Изменить время" << endl;
-		else cout << " Изменить время" << endl;
+		if (choiceButton == 0) cout << " -> РР·РјРµРЅРёС‚СЊ РІСЂРµРјСЏ" << endl;
+		else cout << " РР·РјРµРЅРёС‚СЊ РІСЂРµРјСЏ" << endl;
 
-		if (choiceButton == 1) cout << " -> Посмотреть время" << endl;
-		else cout << " Посмотреть время" << endl;
+		if (choiceButton == 1) cout << " -> РџРѕСЃРјРѕС‚СЂРµС‚СЊ РІСЂРµРјСЏ" << endl;
+		else cout << " РџРѕСЃРјРѕС‚СЂРµС‚СЊ РІСЂРµРјСЏ" << endl;
 
-		if (choiceButton == 2) cout << " -> Определить после полудня или до полудня данное время" << endl;
-		else cout << " Определить после полудня или до полудня данное время" << endl;
+		if (choiceButton == 2) cout << " -> РћРїСЂРµРґРµР»РёС‚СЊ РїРѕСЃР»Рµ РїРѕР»СѓРґРЅСЏ РёР»Рё РґРѕ РїРѕР»СѓРґРЅСЏ РґР°РЅРЅРѕРµ РІСЂРµРјСЏ" << endl;
+		else cout << " РћРїСЂРµРґРµР»РёС‚СЊ РїРѕСЃР»Рµ РїРѕР»СѓРґРЅСЏ РёР»Рё РґРѕ РїРѕР»СѓРґРЅСЏ РґР°РЅРЅРѕРµ РІСЂРµРјСЏ" << endl;
 
-		if (choiceButton == 3) cout << " -> Добавить к данному времени секунды" << endl;
-		else cout << " Добавить к данному времени секунды" << endl;
+		if (choiceButton == 3) cout << " -> Р”РѕР±Р°РІРёС‚СЊ Рє РґР°РЅРЅРѕРјСѓ РІСЂРµРјРµРЅРё СЃРµРєСѓРЅРґС‹" << endl;
+		else cout << " Р”РѕР±Р°РІРёС‚СЊ Рє РґР°РЅРЅРѕРјСѓ РІСЂРµРјРµРЅРё СЃРµРєСѓРЅРґС‹" << endl;
 
-		if (choiceButton == 4) cout << " -> Выход" << endl;
-		else cout << " Выход" << endl;
+		if (choiceButton == 4) cout << " -> Р’С‹С…РѕРґ" << endl;
+		else cout << " Р’С‹С…РѕРґ" << endl;
 
 		button = _getch();
 		if (button == 224)
@@ -288,17 +288,17 @@ int menuChange(SmartClock<T1>& obj)
 	while (true) {
 		choose_menu = (choose_menu + 4) % 4;
 
-		if (choose_menu == 0) { cout << " -> Часы: " << obj->getHour() << endl; }
-		else cout << " Часы: " << obj->getHour() << endl;
+		if (choose_menu == 0) { cout << " -> Р§Р°СЃС‹: " << obj->getHour() << endl; }
+		else cout << " Р§Р°СЃС‹: " << obj->getHour() << endl;
 
-		if (choose_menu == 1) { cout << " -> Минуты: " << obj->getMinute() << endl; }
-		else cout << " Минуты: " << obj->getMinute() << endl;
+		if (choose_menu == 1) { cout << " -> РњРёРЅСѓС‚С‹: " << obj->getMinute() << endl; }
+		else cout << " РњРёРЅСѓС‚С‹: " << obj->getMinute() << endl;
 
-		if (choose_menu == 2) { cout << " -> Секунды: " << obj->getSecond() << endl; }
-		else cout << " Секунды: " << obj->getSecond() << endl;
+		if (choose_menu == 2) { cout << " -> РЎРµРєСѓРЅРґС‹: " << obj->getSecond() << endl; }
+		else cout << " РЎРµРєСѓРЅРґС‹: " << obj->getSecond() << endl;
 
-		if (choose_menu == 3) { cout << " -> Выйти в главное меню " << endl; }
-		else cout << " Выйти в главное меню " << endl;
+		if (choose_menu == 3) { cout << " -> Р’С‹Р№С‚Рё РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ " << endl; }
+		else cout << " Р’С‹Р№С‚Рё РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ " << endl;
 
 
 		keyboard_button = _getch();
